@@ -1,22 +1,97 @@
 #include <stdio.h>
 
-// Desafio Super Trunfo - Países
-// Tema 1 - Cadastro das Cartas
-// Este código inicial serve como base para o desenvolvimento do sistema de cadastro de cartas de cidades.
-// Siga os comentários para implementar cada parte do desafio.
-//Teste larissa
-
 int main() {
-    // Sugestão: Defina variáveis separadas para cada atributo da cidade.
-    // Exemplos de atributos: código da cidade, nome, população, área, PIB, número de pontos turísticos.
+    unsigned long int populacao1, populacao2;
+    int pontosTuristicos1, pontosTuristicos2;
+    float area1, area2;
+    float pib1, pib2;
+    float densidade1, densidade2;
+    float pibPerCapita1, pibPerCapita2;
+    float superPoder1, superPoder2;
     
-    // Cadastro das Cartas:
-    // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
-    // Solicite ao usuário que insira as informações de cada cidade, como o código, nome, população, área, etc.
-    
-    // Exibição dos Dados das Cartas:
-    // Sugestão: Utilize a função printf para exibir as informações das cartas cadastradas de forma clara e organizada.
-    // Exiba os valores inseridos para cada atributo da cidade, um por linha.
+
+    printf(" Bem-vindo ao jogo Super Trunfo de Cidades! \n");
+
+    // Dados da 1ª cidade
+    printf("Digite a quantidade populacional da 1ª cidade: \n");
+    scanf("%lu", &populacao1);
+
+    printf("Digite a área (em Km²) da 1ª cidade: \n");
+    scanf("%f", &area1);
+
+    printf("Digite o PIB da 1ª cidade: \n");
+    scanf("%f", &pib1);
+
+    printf("Digite a quantidade de pontos turísticos da 1ª cidade: \n");
+    scanf("%d", &pontosTuristicos1);
+
+    printf("\n");
+
+    // Dados da 2ª cidade
+    printf("Digite a quantidade populacional da 2ª cidade: \n");
+    scanf("%lu", &populacao2);
+
+    printf("Digite a área (em Km²) da 2ª cidade: \n");
+    scanf("%f", &area2);
+
+    printf("Digite o PIB da 2ª cidade: \n ");
+    scanf("%f", &pib2);
+
+    printf("Digite a quantidade de pontos turísticos da 2ª cidade: \n");
+    scanf("%d", &pontosTuristicos2);
+
+    printf("\n    Dados coletados com sucesso!   \n");
+
+    //Soma da densidade populacional 
+    densidade1 = (populacao1 / area1);
+    densidade2 = (populacao2 / area2);
+
+    //Soma da PIB per capita
+    pibPerCapita1 = (pib1 / populacao1);
+    pibPerCapita2 = (pib2 / populacao2);
+
+    // Soma do Super Poder
+    superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1 / densidade1);
+    superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1 / densidade2);
+
+    // Exibição dos dados
+    printf("\nResumo das cidades:\n");
+
+    // Cidade 1
+    printf("\nCidade 1:\n");
+    printf("População: %lu\n", populacao1);
+    printf("Área: %.2f km²\n", area1);
+    printf("PIB:  %.2f\n", pib1);
+    printf("Pontos turísticos: %d\n", pontosTuristicos1);
+    printf("Densidade populacional: %.2f\n", densidade1);
+    printf("PIB Per capita: %.2f\n", pibPerCapita1);
+
+    // Cidade 2
+    printf("\nCidade 2:\n");
+    printf("População: %lu\n", populacao2);
+    printf("Área: %.2f km²\n", area2);
+    printf("PIB:  %.2f\n", pib2);
+    printf("Pontos turísticos: %d\n", pontosTuristicos2);
+    printf("Densidade populacional: %.2f\n", densidade2);
+    printf("PIB Per capita: %.2f\n", pibPerCapita2);
+
+    // Resultado da Batalha
+    printf(" \n -Resultado da Batalha-\n");
+    printf("População: Carta %lu vencedora\n", (populacao1 > populacao2)? 1 : 2);
+    printf("Área: Carta %d vencedora\n", (area1 > area2)? 1 : 2);
+    printf("PIB: Carta %d vencedora\n", (pib1 > pib2)? 1 : 2);
+    printf("Pontos turísticos: Carta %d vencedora\n", (pontosTuristicos1 > pontosTuristicos2)? 1 : 2);
+    printf("Densidade populacional: Carta %d vencedora\n", (densidade1 < densidade2)? 1 : 2);
+    printf("PIB Per capita: Carta %d vencedora\n", (pibPerCapita1 > pibPerCapita2)? 1 : 2);
+    printf("Super Poder: Carta %d vencedora\n", (superPoder1 > superPoder2)? 1 : 2);
+
+
+
+
+
+
+
+
 
     return 0;
 }
