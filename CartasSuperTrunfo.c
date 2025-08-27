@@ -7,6 +7,7 @@ int main() {
     float pib1, pib2;
     float densidade1, densidade2;
     float pibPerCapita1, pibPerCapita2;
+    float superPoder1, superPoder2;
     
 
     printf(" Bem-vindo ao jogo Super Trunfo de Cidades! \n");
@@ -49,7 +50,9 @@ int main() {
     pibPerCapita1 = (pib1 / populacao1);
     pibPerCapita2 = (pib2 / populacao2);
 
-    
+    // Soma do Super Poder
+    superPoder1 = populacao1 + area1 + pib1 + pontosTuristicos1 + pibPerCapita1 + (1 / densidade1);
+    superPoder2 = populacao2 + area2 + pib2 + pontosTuristicos2 + pibPerCapita2 + (1 / densidade2);
 
     // Exibição dos dados
     printf("\nResumo das cidades:\n");
@@ -71,6 +74,17 @@ int main() {
     printf("Pontos turísticos: %d\n", pontosTuristicos2);
     printf("Densidade populacional: %.2f\n", densidade2);
     printf("PIB Per capita: %.2f\n", pibPerCapita2);
+
+    // Resultado da Batalha
+    printf(" \n -Resultado da Batalha-\n");
+    printf("População: Carta %d vencedora\n", (populacao1 > populacao2) ? 1 : 2 );
+    printf("Área: Carta %d vencedora\n", (area1 > area2) ? 1 : 2);
+    printf("PIB: Carta %d vencedora\n", (pib1 > pib2) ? 1 : 2);
+    printf("Pontos turísticos: Carta %d vencedora\n", (pontosTuristicos1 > pontosTuristicos2) ? 1 : 2);
+    printf("Densidade populacional: Carta %d vencedora\n", (densidade1 < densidade2) ? 1 : 2);
+    printf("PIB Per capita: Carta %d vencedora\n", (pibPerCapita1 > pibPerCapita2) ? 1 : 2);
+    printf("Super Poder: Carta %d vencedora\n", (superPoder1 > superPoder2) ? 1 : 2);
+
 
 
 
